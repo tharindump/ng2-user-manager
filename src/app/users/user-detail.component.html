@@ -1,0 +1,19 @@
+<md-grid-list cols="3" md-row-height="200px">
+    <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1">
+        <div id="profilepic">
+            <img src="https://app.nimia.com/static/img/default_profile.png" />
+        </div>
+    </md-grid-tile>
+
+    <md-grid-tile [colspan]="1" [rowspan]="1" [style.background]="blue">
+
+        <div>
+            <md-list>
+                <md-list-item><span>Name: </span>{{user.name}}</md-list-item>
+                <md-list-item><span>Username</span> {{user.username}}</md-list-item>
+                <md-list-item><span>Age</span> {{user.age}}</md-list-item>
+            </md-list>
+        </div>
+    </md-grid-tile>
+
+</md-grid-list>

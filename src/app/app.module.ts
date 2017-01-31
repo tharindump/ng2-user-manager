@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { UserDetailComponent } from './users/user-detail.component';
 import { AddUserComponent } from './users/add-user.component';
 import { UserDashBoardCompnent } from './users/dashboard.component';
@@ -8,7 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {MaterialModule} from '@angular/material';
+import { MaterialModule } from '@angular/material';
 
 
 @NgModule({
@@ -20,6 +21,11 @@ import {MaterialModule} from '@angular/material';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+      {path: 'dashboard', component: UserDashBoardCompnent},
+      {path: 'user/:username', component: UserDetailComponent}
+    ]),
     FormsModule,
     HttpModule,
     MaterialModule.forRoot()

@@ -16,6 +16,12 @@ export class UserService {
             .then(response => response.json());
     }
 
+    getUser(username: string): Promise<any> {
+        return this.http.get(`${this.userApiUrl}/${username}`)
+                .toPromise()
+                .then(response => response.json());
+    }
+
     addUser(user: User): Promise<any> {
         return this.http.post(this.userApiUrl, user,
                 this.headers).toPromise()

@@ -1,0 +1,12 @@
+md-grid-list {
+    text-align: left;
+}
+
+md-grid-list span {
+    width: 100px;
+    font-weight: bold;
+}
+
+#profilepic {
+    border: 1px solid #ccc;
+}

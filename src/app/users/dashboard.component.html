@@ -9,6 +9,7 @@
                     <th>Username</th>
                     <th>Age</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -16,6 +17,7 @@
                     <td>{{user.name}}</td>
                     <td>{{user.username}}</td>
                     <td>{{user.age}}</td>
+                    <td><a md-raised-button color="primary" [routerLink]="['/user', user.username]">View Profile</a></td>
                     <td><button md-raised-button color="warn" (click)="deleteUser(user.username, pos)">Delete</button>
                 </tr>
             </tbody>
