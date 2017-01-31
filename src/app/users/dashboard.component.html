@@ -1,0 +1,25 @@
+<div id="dashboard-box">
+    <md-card>
+        <add-user (onSuccess)="updateList($event)"></add-user>
+        <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Age</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users; let pos=index">
+                    <td>{{user.name}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.age}}</td>
+                    <td><button md-raised-button color="warn" (click)="deleteUser(user.username, pos)">Delete</button>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </md-card>
+</div>

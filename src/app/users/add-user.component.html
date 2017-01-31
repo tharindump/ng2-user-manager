@@ -1,0 +1,14 @@
+<div id="add-user-box">
+    <div>
+        <md-input-container>
+            <input md-input required [(ngModel)]="user.name" placeholder="Name">
+        </md-input-container>
+        <md-input-container>
+            <input md-input [(ngModel)]="user.username" placeholder="Username">
+        </md-input-container>
+        <md-input-container>
+            <input type="number" md-input [(ngModel)]="user.age" placeholder="Age">
+        </md-input-container>
+        <button md-raised-button color="accent" (click)="addNewUser()">Add User</button>
+    </div>
+</div>
