@@ -1,3 +1,4 @@
+import { setTimeout } from 'timers';
 import { Headers, Http } from '@angular/http';
 import { UserService } from './users.service';
 import { User } from './user';
@@ -11,9 +12,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class AddUserComponent {
 
-    private name: string = "Hey";
     result: any;
     user: User;
+    inputError: string;
+    showError: boolean;
     @Output() onSuccess = new EventEmitter<User>();
 
     constructor(private userService: UserService, private http: Http) {
@@ -21,14 +23,17 @@ export class AddUserComponent {
     }
 
     addNewUser(): void{
-        console.log(this.user);
         this.userService.addUser(this.user)
             .then(
                 res => {
-                this.result = res;
-                console.log(res);
-                this.onSuccess.emit(this.user);
-                this.clearUserDetails();
+                if(res.message === "success"){
+                    this.onSuccess.emit(this.user);
+                    this.clearUserDetails();
+                } else {
+                    this.showError = true;
+                    this.inputError = res.message;
+                    setTimeout(() => this.showError = false, 5000);
+                }
             })
             .catch(error => {console.log(error)});
     }

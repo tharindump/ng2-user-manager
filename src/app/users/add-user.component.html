@@ -11,4 +11,5 @@
         </md-input-container>
         <button md-raised-button color="accent" (click)="addNewUser()">Add User</button>
     </div>
+    <div class="message" *ngIf="showError">{{inputError}}</div>
 </div>

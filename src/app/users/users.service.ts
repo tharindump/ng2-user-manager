@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class UserService {
+
+//service class to handle RESTful API
+
     private userApiUrl = `http://localhost:8080/users`;
     private headers = new Headers({'Content-Type': 'application/json'});
     private users: User[];
