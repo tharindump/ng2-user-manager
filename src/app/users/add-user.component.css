@@ -1,3 +1,9 @@
 md-input-container {
     margin: 5px 15px;
 }
+
+.message {
+    padding: 10px 40px;
+    background-color: #fa6a6a;
+    color: #fff;
+}
