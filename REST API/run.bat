@@ -1,0 +1,1 @@
+java -jar user-rest-service-1.4.3.RELEASE.jar
